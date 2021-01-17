@@ -37,7 +37,7 @@ const upload = multer({ storage: storage, fileFilter: fileFilter });
   );
 
   //update product
-  app.put("/api/product",
+  app.put("/api/product/",
   upload.single('file'),
     [
       authJwt.verifyToken,
@@ -55,7 +55,7 @@ const upload = multer({ storage: storage, fileFilter: fileFilter });
   );
 
   //list products
-  app.get("/api/product/:id",
+  app.get("/api/product/",
     [
       authJwt.verifyToken,
     ],

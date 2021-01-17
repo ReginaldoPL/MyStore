@@ -112,6 +112,58 @@ exports.delete = (req, res) => {
 
 };
 
-exports.list = (req, res) => {
+exports.list = async (req, res) => {
   // pagination and filter
+  // destructure page and limit and set default values
+  const { search, page = 1, limit = 10 } = req.query;
+
+  try {
+
+    const filter = (!search || search.length == 0) ? {} :
+      {
+        name: new RegExp(`${search}`, 'i')
+
+      }
+
+    // get total documents in the Product collection 
+    const count = await Product.countDocuments(filter);
+    if (count == 0) {
+      res.status(200).send({
+        products: [],
+        count: 0,
+        totalPages: 1,
+        currentPage: 1
+      });
+    } else {
+      let pageAmount = (page > Math.ceil(count / limit)) ? Math.ceil(count / limit) : page;
+      let skip = pageAmount > 0 ? (pageAmount - 1) * limit : 1
+
+      //get Register
+      const prods = await Product.find(filter)
+        .limit(limit * 1)
+        .skip(skip)
+        .exec();
+
+
+
+      let rets = prods.map((element) => {
+        let ret = element
+        if (ret.fileImage)
+          ret.fileImage = imagesConf.url + ret.fileImage;
+        return ret
+
+      })
+
+      // return response with Product, total pages, and current page
+      res.status(200).send({
+        products: rets,
+        count: count,
+        totalPages: Math.ceil(count / limit),
+        currentPage: pageAmount
+      });
+    }
+  } catch (err) {
+    res.status(500).send({ message: err });
+
+  }
 };
