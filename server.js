@@ -4,6 +4,8 @@ const cors = require("cors");
 const dbConfig = require("./app/config/db.config");
 var bcrypt = require("bcryptjs");
 
+const path = require('path');
+
 
 const app = express();
 
@@ -23,6 +25,7 @@ const db = require("./app/models");
 const Role = db.role;
 const User = db.user;
 
+global.appRoot = path.resolve(__dirname);
 
 db.mongoose
     .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
@@ -43,10 +46,11 @@ db.mongoose
 app.get("/", (req, res) => {
     res.json({ message: "Hello, this is the TesteSS - Teste to Job in SouthSystem NodeJS Oportunity :o)" });
 });
+app.use('/images', express.static('uploads'));
 //routes
 require('./app/routes/auth.routes')(app);
 
-// require('./app/routes/product.routes')(app);
+require('./app/routes/product.routes')(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

@@ -3,6 +3,18 @@ const ROLES = db.ROLES;
 const User = db.user;
 
 checkDuplicateUsernameOrEmail = (req, res, next) => {
+  if (!req.body.username || req.body.username.length==0){
+    res.status(400).send({ message: "Failed! Username is empty!" });
+      return;
+  }
+  if (!req.body.id &&  (!req.body.password || req.body.password.length==0)){
+    res.status(400).send({ message: "Failed! password is empty!" });
+      return;
+  }
+  if (!req.body.id &&  (!req.body.email || req.body.email.length==0)){
+    res.status(400).send({ message: "Failed! email is empty!" });
+      return;
+  }
   // Username
   User.findOne({
     username: req.body.username
