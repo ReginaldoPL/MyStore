@@ -4,7 +4,7 @@ const db = require("../models");
 const User = db.user;
 const Role = db.role;
 
-verifyToken = (req, res, next) => {
+const verifyToken = (req, res, next) => {
   let token = req.headers["x-access-token"];
 
   if (!token) {
@@ -20,7 +20,7 @@ verifyToken = (req, res, next) => {
   });
 };
 
-isAdmin = (req, res, next) => {
+const isAdmin = (req, res, next) => {
   let adminRole = false;
   User.findById(req.userId).exec((err, user) => {
     if (err) {

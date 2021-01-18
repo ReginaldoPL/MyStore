@@ -19,7 +19,8 @@ Usuário - Verificar cadastro de 2 usuário com mesmo nome
 Usuário - Verificar cadastro de 2 usuário com mesmo Email
 ```
 
-##Routas:
+## Rotas:
+
 Login:
     post: /api/auth/signin
 
@@ -48,6 +49,6 @@ Get Product
 List Products
     get: /api/product?search=text&page=4&limit=10
     
-    as Opções search, page e  limit são opcionais
+as Opções search, page e  limit são opcionais
 
 

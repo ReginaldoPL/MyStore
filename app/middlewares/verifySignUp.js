@@ -2,7 +2,7 @@ const db = require("../models");
 const ROLES = db.ROLES;
 const User = db.user;
 
-checkDuplicateUsernameOrEmail = (req, res, next) => {
+const  checkDuplicateUsernameOrEmail = (req, res, next) => {
   if (!req.body.username || req.body.username.length==0){
     res.status(400).send({ message: "Failed! Username is empty!" });
       return;
@@ -50,7 +50,7 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
   });
 };
 
-checkRolesExisted = (req, res, next) => {
+const checkRolesExisted = (req, res, next) => {
   if (req.body.roles) {
     for (let i = 0; i < req.body.roles.length; i++) {
       if (!ROLES.includes(req.body.roles[i])) {
