@@ -1,5 +1,3 @@
-module.exports = {
-    HOST: "localhost",
-    PORT: 27017,
-    DB: "teste_ss"
-  };
+module.exports = { 
+  URI : "mongodb+srv://testeSS:testess&@!$@cluster0.ldz96.mongodb.net/giui7?retryWrites=true&w=majority"
+};

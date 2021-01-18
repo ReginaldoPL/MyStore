@@ -28,7 +28,7 @@ const User = db.user;
 global.appRoot = path.resolve(__dirname);
 
 db.mongoose
-    .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+     .connect(dbConfig.URI,{
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
