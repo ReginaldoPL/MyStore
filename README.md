@@ -34,6 +34,7 @@ Get Product
 
 List Products
     get: /api/product?search=text&page=4&limit=10
+    
     as Opções search, page e  limit são opcionais
 
 
