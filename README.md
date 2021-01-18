@@ -2,9 +2,22 @@
 
 Usuário "admin", password "admin" é criado automaticamente
 
-Ambiente de produção = https://reginalotestess.herokuapp.com
+Ambiente de produção no [reginalotestess.herokuapp.com] (https://reginalotestess.herokuapp.com)
 
-Dentro do Projeto há um arquivo de importação para o insomnia com as rotas e configurações para os testes:
+Dentro do Projeto há um arquivo de importação para o insomnia com as rotas e configurações para os testes
+
+Para fazer testes unitário de Rota foi utilizado jest, SuperTest e Mongo em memória:
+
+```
+Verificar se a API está no ar
+Verificar o Login
+Verificar Cadastro de Usuário Novo
+Verificar Cadastro de Usuário com username Vazio
+Verificar Cadastro de Usuário com password Vazio
+Verificar Cadastro de Usuário com email Vazio
+Usuário - Verificar cadastro de 2 usuário com mesmo nome
+Usuário - Verificar cadastro de 2 usuário com mesmo Email
+```
 
 ##Routas:
 Login:
