@@ -4,8 +4,11 @@
   "description": "",
   "main": "start.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --runInBand ./test",
     "test:watch": "jest --watch"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
@@ -24,6 +27,7 @@
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "jsonwebtoken": "^8.5.1",
+    "mongodb-memory-server": "^6.9.3",
     "mongoose": "^5.11.12",
     "multer": "^1.4.2",
     "path": "^0.12.7"
