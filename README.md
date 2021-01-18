@@ -2,6 +2,8 @@
 
 Usuário "admin", password "admin" é criado automaticamente
 
+Ambiente de produção = https://reginalotestess.herokuapp.com
+
 Dentro do Projeto há um arquivo de importação para o insomnia com as rotas e configurações para os testes:
 
 ##Routas:
