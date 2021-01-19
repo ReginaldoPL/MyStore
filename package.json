@@ -2,7 +2,7 @@
   "name": "testess",
   "version": "1.0.0",
   "description": "",
-  "main": "start.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest --runInBand ./test",
     "test:watch": "jest --watch"
