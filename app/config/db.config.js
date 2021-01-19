@@ -1,3 +1,3 @@
 module.exports = { 
-  URI : "mongodb+srv://testeSS:testess&@!$@cluster0.ldz96.mongodb.net/giui7?retryWrites=true&w=majority"
+  URI : process.env.PATH_MONGO ||  "mongodb://localhost:27017/teste_ss"
 };

@@ -1,3 +1,3 @@
 module.exports = {
-    url: "https://reginalotestess.herokuapp.com/images/"
+    url: process.env.PATH_IMAGES || "https://localhost:8080/images/"
   };
