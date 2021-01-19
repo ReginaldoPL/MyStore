@@ -28,6 +28,10 @@ const isAdmin = (req, res, next) => {
       return;
     }
 
+    if(!user){
+      res.status(401).send({ message: "Unauthorized!" });
+      return;
+    }
     Role.find(
       {
         _id: { $in: user.roles }
