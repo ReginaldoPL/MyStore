@@ -69,7 +69,7 @@ db.mongoose
 
 // simple route
 app.get("/", (req, res) => {
-    res.json({ message: "Hello, this is the TesteSS - Teste to Job in SouthSystem NodeJS Oportunity :o)" });
+    res.json({ message: `Hello, this is the TesteSS - Teste to Job in SouthSystem NodeJS Oportunity :o) <br /> Banco ${dbConfig.URI} - Imagens pelo link  ` });
 });
 app.use('/images', express.static('uploads'));
 //routes
@@ -80,5 +80,5 @@ require('./app/routes/product.routes')(app);
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}.`);
+    console.log(`Server is running on port ${PORT}. Banco ${dbConfig.URI} `);
 });
