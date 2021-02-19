@@ -69,7 +69,7 @@ db.mongoose
 
 // simple route
 app.get("/", (req, res) => {
-    res.json({ message: `Hello, this is the TesteSS - Teste to Job in SouthSystem NodeJS Oportunity :o)` });
+    res.json({ message: `Hello, this is the MyStore-API` });
 });
 app.use('/images', express.static('uploads'));
 //routes
